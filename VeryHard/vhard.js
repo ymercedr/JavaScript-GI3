@@ -12,6 +12,11 @@ function Person(name, job, age) {
   };
 }
 
+let individual = new Person("Yareline", "Apprentice", 23);
+// console.log(individual);
+console.log(individual.exercise());
+console.log(individual.fetchJob());
+
 //option B
 // Person.prototype.exercise = function () {
 //   return "Wake up every morning at 6:00am to exercise.";
@@ -21,11 +26,6 @@ function Person(name, job, age) {
 //   return this.name + " is an " + this.job;
 // };
 // Programmer.prototype = Person.prototype;
-
-let individual = new Person("Yareline", "Apprentice", 23);
-// console.log(individual);
-// console.log(individual.exercise());
-// console.log(individual.fetchJob());
 
 //Programmer Constructor with inherited properties
 function Programmer(name, job, age, languages) {
@@ -41,21 +41,31 @@ function Programmer(name, job, age, languages) {
     return this.busy;
   };
   this.offerNewTask = function () {
-    if ((this.busy = true)) {
-      return "This person is available for new responsibilities.";
-    } else {
+    if (this.busy === true) {
       return "This person is working on previous responsibilities.";
+    } else {
+      return "This person is available for new responsibilities.";
     }
   };
-  //   this.learnLanguage = function () {};
-  //   this.learnLanguage = function (lan) {languages.push(lan)};
-  this.listLanguage = function () {
+  //can only add one language at a time
+  this.learnLanguage = function (lan) {
+    languages.push(lan);
+  };
+  this.listLanguages = function () {
     console.log(languages);
   };
 }
 
-let persona = new Programmer("Alexis", "Student", 23, "JavaScript");
+let persona = new Programmer("Alexis", "Student", 23, ["HTML", "JavaScript"]);
+let persona2 = new Programmer("Fher", "Graduate", 24, ["HTML", "CSS"]);
 
-console.log(persona.completeTask());
-console.log(persona.offerNewTask());
-console.log(persona);
+// console.log(persona.completeTask());
+// console.log(persona.offerNewTask());
+// persona.learnLanguage("CSS");
+// console.log(persona.listLanguages());
+// // console.log(persona);
+
+// console.log(persona2.completeTask());
+// console.log(persona2.offerNewTask());
+// persona2.learnLanguage("JavaScript");
+// console.log(persona2.listLanguages());

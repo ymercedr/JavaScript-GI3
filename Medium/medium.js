@@ -5,7 +5,6 @@ function cutPizzaSlices(x) {
 
 function sharePizza(y) {
   var amountPizza = cutPizzaSlices(8);
-  // var finalSlices =
   return "Each person gets " + amountPizza / y + " slices of pizza";
 }
 
