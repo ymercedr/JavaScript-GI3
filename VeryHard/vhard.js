@@ -3,7 +3,6 @@ function Person(name, job, age) {
   this.name = name;
   this.job = job;
   this.age = age;
-  //option A  WHY DO THESE APPEAR WITH THE PROGRAMMER
   this.exercise = function () {
     return "Wake up every morning at 6:00am to exercise.";
   };
@@ -13,19 +12,9 @@ function Person(name, job, age) {
 }
 
 let individual = new Person("Yareline", "Apprentice", 23);
-// console.log(individual);
+console.log(individual);
 console.log(individual.exercise());
 console.log(individual.fetchJob());
-
-//option B
-// Person.prototype.exercise = function () {
-//   return "Wake up every morning at 6:00am to exercise.";
-// };
-
-// Person.prototype.fetchJob = function () {
-//   return this.name + " is an " + this.job;
-// };
-// Programmer.prototype = Person.prototype;
 
 //Programmer Constructor with inherited properties
 function Programmer(name, job, age, languages) {
@@ -59,13 +48,13 @@ function Programmer(name, job, age, languages) {
 let persona = new Programmer("Alexis", "Student", 23, ["HTML", "JavaScript"]);
 let persona2 = new Programmer("Fher", "Graduate", 24, ["HTML", "CSS"]);
 
-// console.log(persona.completeTask());
-// console.log(persona.offerNewTask());
-// persona.learnLanguage("CSS");
-// console.log(persona.listLanguages());
-// // console.log(persona);
+//nonbusy person
+persona.completeTask();
+console.log(persona.offerNewTask());
+persona.learnLanguage("CSS");
+console.log(persona.listLanguages());
 
-// console.log(persona2.completeTask());
-// console.log(persona2.offerNewTask());
-// persona2.learnLanguage("JavaScript");
-// console.log(persona2.listLanguages());
+//busyperson
+console.log(persona2.offerNewTask());
+persona2.learnLanguage("JavaScript");
+console.log(persona2.listLanguages());
